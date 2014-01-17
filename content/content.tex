@@ -1,7 +1,44 @@
-\Blinddocument
+\chapter{(1+1) - ES}
 
-\chapter{Das ist ein Test}
+\section{Implementierung: Minimierung}
 
- das ist ein test .... asdfasdfasdf
+Der (1+1) Algorithmus wurde laut der Folie 61 implementiert. Im Anhang kann der Code begutachtet werden. Der Vergleich zwischen der Abbildung \todo{Verweis} ... und der Abbildung auf Folie 71 ergab, das wir die Aufgabe gelöst haben. Der Eingabevektor wird minimiert. Wenn nur eine kleine Grenze der Generationen übergeben wird, kann der Algorithmus nicht den Optimalen Wert finden.
 
-\Blinddocument
+\todo{Abbildung}
+
+\section{Implementierung: Maximierung}
+
+Im Gegensatz zur vorherigen Implementierung, wurde die Bedienung zur Übernahme des besseren Wertes geändert, dadurch wird nicht der kleinere weiter verwendet sondern der größere. Die Abbruchbedienung wurde so abgeändert, das der Fitnesswert dem übergebenen N entspricht. Zusätzlich wird laut Aufgabe eine andere Fitness-Funktion verwendet. FÃŒr die Fitness-Funktion wurde eine Modulo 2 Operation verwendet. In Abbildung \todo{Verweis} ... erkennt man, das im Gegensatz zu Teilaufgabe 2.1 die Kurve invertiert wurde.
+
+\todo{Abbldung}
+
+Die Laufzeitkomplexität des Algorithmus im Intervall von $N=10,...300$ überprüft. Dazu wurden die Ergebnisse der Laufzeit über 10 Durchläufe gemittelt. Aufgrund der langen Laufzeit haben wir uns dafür entschieden den Bereich mit 50 Schritten Abzustasten, dadurch ist in der Abbildung \todo{Verweis} ... die Achsen Beschriftung mit $1-6$ angegeben. Wort case Laufzeit \todo{worst case laufzeit} ... .
+
+\todo{Abbildung}
+
+\chapter{(1+1) - ES: 1/5 Regel}
+
+Laut Aufgabe wurde der Algorithmus mit der 1/5 Regel erweitert. Dazu wurden die Änderungen aus Folie 76. Auch hier kann in erkannt werden, das die Abbildung \todo{Verweis} ... ähnlich wie der in Folie 77 aussieht. Wobei Kurve einen flacheren Verlauf aufweise. Die Ergebnisse sind $sigma = 1.1808e^-7$ und $Generationen = 7501$ .
+
+\todo{Abbildung}
+
+\chapter{Abwandlung Aufgabe 3}
+
+Die Implementierung aus der Aufgabe 3 wurde abgeändert, das die Fitness-Funktion als Übergabeparameter übergeben werden kann. In Abbildung \todo{Verweis} ... ist die Auswertung mit der Parabolic-Ridge und in Abbildung \todo{Verweis} ... mit einem Faktor $d=1$ zusehen. Der Faktor wurde in den Abbildungen \todo{Verweis} ... und \todo{Verweis} ... auf $d=10$ erhöht.
+
+\todo{Abbildung}
+\todo{Abbildung}
+\todo{Abbildung}
+\todo{Abbildung}
+
+\todo{Interpretation: abschreiben von jonatan}
+
+\chapter{(1, $\lambda$) - $\sigma$SA - ES}
+
+Der (1, $\lambda$) - $\sigma$ SA - ES Algorithmus wurde laut Folie 92 implementiert. Die werte wurden aus der Folie 95 Entnohmen. Im Vergleich zwischen der Abbildung \todo{Verweis} ... und der Abbildung auf Folie 95 kann erkannt werden, dass der Algorithmus richtig implementiert wurde.
+
+\todo{Abbildung}
+
+\chapter{($\mu$ / $\mu_1$, $\lambda$) - $\sigma$SA - ES}
+
+Wir waren nicht in der Lage diese Aufgabe zu lösen.
