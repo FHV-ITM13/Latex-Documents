@@ -4,19 +4,19 @@
 
 Der (1+1) Algorithmus wurde laut der Folie 61 implementiert. Im Anhang kann der Code begutachtet werden. Der Vergleich zwischen der Abbildung \ref{fig:plot_2a} und der Abbildung auf Folie 71 ergab, das wir die Aufgabe gelöst haben. Der Eingabevektor wird minimiert. Wenn nur eine kleine Grenze der Generationen übergeben wird, kann der Algorithmus nicht den Optimalen Wert finden.
 
-\img{0.8}{content/aufgabe2/plot_2a.PNG}{(1+1)-ES}{plot_2a}
+\img{0.8}{content/aufgabe2/plot_2a.PNG}{(1+1)-ES Minimierung}{plot_2a}
 
 \section{Implementierung: Maximierung}
 
-Im Gegensatz zur vorherigen Implementierung, wurde die Bedienung zur Übernahme des besseren Wertes geändert, dadurch wird nicht der kleinere weiter verwendet sondern der größere. Die Abbruchbedienung wurde so abgeändert, das der Fitnesswert dem übergebenen N entspricht. Zusätzlich wird laut Aufgabe eine andere Fitness-Funktion verwendet. FÃŒr die Fitness-Funktion wurde eine Modulo 2 Operation verwendet. In Abbildung \ref{ref:plot_2b} erkennt man, das im Gegensatz zu Teilaufgabe 2.1 die Kurve invertiert wurde.
+Im Gegensatz zur vorherigen Implementierung, wurde die Bedienung zur Übernahme des besseren Wertes geändert, dadurch wird nicht der kleinere weiter verwendet sondern der größere. Die Abbruchbedienung wurde so abgeändert, das der Fitnesswert dem übergebenen N entspricht. Zusätzlich wird laut Aufgabe eine andere Fitness-Funktion verwendet. Für die Fitness-Funktion wurde eine Modulo 2 Operation verwendet. In Abbildung \ref{ref:plot_2b} erkennt man, das im Gegensatz zu Teilaufgabe 2.1 die Kurve invertiert wurde.
 
-\img{0.8}{content/aufgabe2/plot_2b.PNG}{(1+1)-ES}{plot_2b}
+\img{0.8}{content/aufgabe2/plot_2b.PNG}{(1+1)-ES Maximierung}{plot_2b}
 
 \newpage
 
 Die Laufzeitkomplexität des Algorithmus im Intervall von $N=10 ... 300$ überprüft. Dazu wurden die Ergebnisse der Laufzeit über 10 Durchläufe gemittelt. Aufgrund der langen Laufzeit haben wir uns dafür entschieden den Bereich mit 50 Schritten Abzustasten, dadurch ist in der Abbildung \ref{fig:plot_2b_mean} die Achsen Beschriftung mit $1-6$ angegeben. Wort case Laufzeit \todo{worst case laufzeit} ... .
 
-\img{0.8}{content/aufgabe2/plot_2b_mean.PNG}{(1+1)-ES}{plot_2b_mean}
+\img{0.8}{content/aufgabe2/plot_2b_mean.PNG}{(1+1)-ES Laufzeit 10 Durchgänge Mittelung}{plot_2b_mean}
 
 \chapter{(1+1) - ES: 1/5 Regel}
 
@@ -26,21 +26,25 @@ Laut Aufgabe wurde der Algorithmus mit der 1/5 Regel erweitert. Dazu wurden die 
 
 \chapter{Abwandlung Aufgabe 3}
 
-Die Implementierung aus der Aufgabe 3 wurde abgeändert, das die Fitness-Funktion als Übergabeparameter übergeben werden kann. In Abbildung \todo{Verweis} ... ist die Auswertung mit der Parabolic-Ridge und in Abbildung \todo{Verweis} ... mit einem Faktor $d=1$ zusehen. Der Faktor wurde in den Abbildungen \todo{Verweis} ... und \todo{Verweis} ... auf $d=10$ erhöht.
+Die Implementierung aus der Aufgabe 3 wurde abgeändert, das die Fitness-Funktion als Übergabeparameter übergeben werden kann. In Abbildung \ref{fig:4_Ridge_1d} ist die Auswertung mit der Parabolic-Ridge und in Abbildung \ref{fig:4_Sharp_1d} mit einem Faktor $d=1$ zusehen. Der Faktor wurde in den Abbildungen\ref{fig:4_Ridge_10d} und \ref{fig:4_Sharp_10d} auf $d=10$ erhöht.
 
-\todo{Abbildung}
-\todo{Abbildung}
-\todo{Abbildung}
-\todo{Abbildung}
+\img{0.8}{content/aufgabe4/4_Ridge_1d.PNG}{Parabolic-Ridge d=1}{4_Ridge_1d}
+\img{0.8}{content/aufgabe4/4_Ridge_10d.PNG}{Parabolic-Ridge d=10}{4_Ridge_10d}
+\img{0.8}{content/aufgabe4/4_Sharp_1d.PNG}{Sharp-Ridge d=1}{4_Sharp_1d}
+\img{0.8}{content/aufgabe4/4_Sharp_10d.PNG}{Sharp-Ridge d=10}{4_Sharp_10d}
 
 \todo{Interpretation: abschreiben von jonatan}
 
 \chapter{(1, $\lambda$) - $\sigma$SA - ES}
 
-Der (1, $\lambda$) - $\sigma$ SA - ES Algorithmus wurde laut Folie 92 implementiert. Die werte wurden aus der Folie 95 Entnohmen. Im Vergleich zwischen der Abbildung \todo{Verweis} ... und der Abbildung auf Folie 95 kann erkannt werden, dass der Algorithmus richtig implementiert wurde.
+Der (1, $\lambda$) - $\sigma$ SA - ES Algorithmus wurde laut Folie 92 implementiert. Die werte wurden aus der Folie 95 entnohmen. Im Vergleich zwischen der Abbildung \todo{Verweis} ... und der Abbildung auf Folie 95 kann erkannt werden, dass der Algorithmus richtig implementiert wurde.
 
 \todo{Abbildung}
 
 \chapter{($\mu$ / $\mu_1$, $\lambda$) - $\sigma$SA - ES}
 
-Wir waren nicht in der Lage diese Aufgabe zu lösen.
+Die Implementierung aus der Aufgabe 5 wurde so abgewandelt, dass der $\sigma$SA - ES Algorithmus als Funktion aufgerufen werden kann und der $\mu$ / $\mu_1$ aus Parameter übergeben werden kann. Der $3/3r$ - ES wurde am Kugelmodell mit $N = 30$ getestet. Die Ergebnisse können in der Abbildung \todo{Verweis} ... begutachtet werden.
+
+\todo{Abbildung}
+
+Beim Test mit $N = 100$, befinden sich die Werte bei $y=3$ im Zulässigen Bereich ($y = ...$\todo{Aufggabe 6: y1} mit $...$\todo{Aufggabe 6: Generattionen} Generationen und $y=...$\todo{Aufggabe 6: y2} mit $...$\todo{Aufggabe 6: Generattionen} Generationen).
