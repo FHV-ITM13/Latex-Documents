@@ -49,9 +49,21 @@
 
 %%%%%%%%%%%%%%
 % booleans
+% title page
+\newboolean{myAddTitleBoolean}
+\setboolean{myAddTitleBoolean}{\myaddtitle} 
+% abstract
+\newboolean{myAddAbstractBoolean}
+\setboolean{myAddAbstractBoolean}{\myaddabstract} 
+% table of contents
+\newboolean{myAddTocBoolean}
+\setboolean{myAddTocBoolean}{\myaddtoc} 
 % todo list
-\newboolean{myaddlistoftodosBoolean}
-\setboolean{myaddlistoftodosBoolean}{\myaddlistoftodos} 
+\newboolean{myAddListOfTodosBoolean}
+\setboolean{myAddListOfTodosBoolean}{\myaddlistoftodos} 
+% todo list
+\newboolean{myAddSummaryBoolean}
+\setboolean{myAddSummaryBoolean}{\myaddsummary} 
 
 %%%%%%%%%%%%%%
 % document
@@ -61,19 +73,33 @@
 \frontmatter
 
 % include title page
-\input{\mytitlepage}
+\ifthenelse{\boolean{myAddTitleBoolean}}{
+	\input{\mytitlepage}
+}{}
+
+% abstract
+\ifthenelse{\boolean{myAddAbstractBoolean}}{
+	\input{content/abstract}
+}{}
 
 % table of contents
-\tableofcontents\newpage
+\ifthenelse{\boolean{myAddTocBoolean}}{
+	\tableofcontents\newpage
+}{}
 
 % add todolist 
-\ifthenelse{\boolean{myaddlistoftodosBoolean}}{
-  \newpage\listoftodos
+\ifthenelse{\boolean{myAddListOfTodosBoolean}}{
+	\newpage\listoftodos
 }{}
 
 % marks main part using arabic page numbers and such; only available in scrbook
 \mainmatter 
 
 \input{content/content}
+
+% summary
+\ifthenelse{\boolean{myAddSummaryBoolean}}{
+	\input{content/summary}
+}{}
 
 \end{document}
