@@ -2,25 +2,27 @@
 
 \section{Implementierung: Minimierung}
 
-Der (1+1) Algorithmus wurde laut der Folie 61 implementiert. Im Anhang kann der Code begutachtet werden. Der Vergleich zwischen der Abbildung \ref{fig:gull} und der Abbildung auf Folie 71 ergab, das wir die Aufgabe gelöst haben. Der Eingabevektor wird minimiert. Wenn nur eine kleine Grenze der Generationen übergeben wird, kann der Algorithmus nicht den Optimalen Wert finden.
+Der (1+1) Algorithmus wurde laut der Folie 61 implementiert. Im Anhang kann der Code begutachtet werden. Der Vergleich zwischen der Abbildung \ref{fig:plot_2a} und der Abbildung auf Folie 71 ergab, das wir die Aufgabe gelöst haben. Der Eingabevektor wird minimiert. Wenn nur eine kleine Grenze der Generationen übergeben wird, kann der Algorithmus nicht den Optimalen Wert finden.
 
-\img{0.5}{graphics/gull.jpg}{Quelle: http://de.wikipedia.org/wiki/Möwen}{gull}
+\img{0.8}{content/aufgabe2/plot_2a.PNG}{(1+1)-ES}{plot_2a}
 
 \section{Implementierung: Maximierung}
 
-Im Gegensatz zur vorherigen Implementierung, wurde die Bedienung zur Übernahme des besseren Wertes geändert, dadurch wird nicht der kleinere weiter verwendet sondern der größere. Die Abbruchbedienung wurde so abgeändert, das der Fitnesswert dem übergebenen N entspricht. Zusätzlich wird laut Aufgabe eine andere Fitness-Funktion verwendet. FÃŒr die Fitness-Funktion wurde eine Modulo 2 Operation verwendet. In Abbildung \todo{Verweis} ... erkennt man, das im Gegensatz zu Teilaufgabe 2.1 die Kurve invertiert wurde.
+Im Gegensatz zur vorherigen Implementierung, wurde die Bedienung zur Übernahme des besseren Wertes geändert, dadurch wird nicht der kleinere weiter verwendet sondern der größere. Die Abbruchbedienung wurde so abgeändert, das der Fitnesswert dem übergebenen N entspricht. Zusätzlich wird laut Aufgabe eine andere Fitness-Funktion verwendet. FÃŒr die Fitness-Funktion wurde eine Modulo 2 Operation verwendet. In Abbildung \ref{ref:plot_2b} erkennt man, das im Gegensatz zu Teilaufgabe 2.1 die Kurve invertiert wurde.
 
-\todo{Abbldung}
+\img{0.8}{content/aufgabe2/plot_2b.PNG}{(1+1)-ES}{plot_2b}
 
-Die Laufzeitkomplexität des Algorithmus im Intervall von $N=10,...300$ überprüft. Dazu wurden die Ergebnisse der Laufzeit über 10 Durchläufe gemittelt. Aufgrund der langen Laufzeit haben wir uns dafür entschieden den Bereich mit 50 Schritten Abzustasten, dadurch ist in der Abbildung \todo{Verweis} ... die Achsen Beschriftung mit $1-6$ angegeben. Wort case Laufzeit \todo{worst case laufzeit} ... .
+\newpage
 
-\todo{Abbildung}
+Die Laufzeitkomplexität des Algorithmus im Intervall von $N=10 ... 300$ überprüft. Dazu wurden die Ergebnisse der Laufzeit über 10 Durchläufe gemittelt. Aufgrund der langen Laufzeit haben wir uns dafür entschieden den Bereich mit 50 Schritten Abzustasten, dadurch ist in der Abbildung \ref{fig:plot_2b_mean} die Achsen Beschriftung mit $1-6$ angegeben. Wort case Laufzeit \todo{worst case laufzeit} ... .
+
+\img{0.8}{content/aufgabe2/plot_2b_mean.PNG}{(1+1)-ES}{plot_2b_mean}
 
 \chapter{(1+1) - ES: 1/5 Regel}
 
-Laut Aufgabe wurde der Algorithmus mit der 1/5 Regel erweitert. Dazu wurden die Änderungen aus Folie 76. Auch hier kann in erkannt werden, das die Abbildung \todo{Verweis} ... ähnlich wie der in Folie 77 aussieht. Wobei Kurve einen flacheren Verlauf aufweise. Die Ergebnisse sind $sigma = 1.1808e^-7$ und $Generationen = 7501$ .
+Laut Aufgabe wurde der Algorithmus mit der 1/5 Regel erweitert. Dazu wurden die Änderungen aus Folie 76. Auch hier kann in erkannt werden, das die Abbildung \ref{fig:plot_3} ähnlich wie der in Folie 77 aussieht. Wobei Kurve einen flacheren Verlauf aufweise. Die Ergebnisse sind $sigma = 1.1808e^-7$ und $Generationen = 7501$ .
 
-\todo{Abbildung}
+\img{0.8}{content/aufgabe3/plot_3.PNG}{(1+1)-ES}{plot_3}
 
 \chapter{Abwandlung Aufgabe 3}
 
