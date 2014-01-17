@@ -1,0 +1,73 @@
+%%%%%%%%%%%%%%%%%%%%%
+% 
+% Author: Wachter Johannes
+% Date: 17.01.2014
+% File: main.tex
+%
+% Main
+% TODO include pdf - attributes
+
+%%%%%%%%%%%%%%
+% settings
+\input{template/settings}
+
+
+%%%%%%%%%%%%%%
+% style
+\input{template/style}
+
+
+%%%%%%%%%%%%%%
+% hacks
+% no hacks needed
+
+
+%%%%%%%%%%%%%%
+% packges
+% language
+\usepackage[utf8]{inputenc}		% utf8 input
+\usepackage[\mylanguage]{babel} 	% language
+\usepackage[T1]{fontenc}
+% images
+\usepackage{eso-pic}
+% structures
+\usepackage{ifthen}   						% programming structure
+\usepackage[\mytodonotesoptions]{todonotes}		% todo command
+\usepackage{blindtext}						% generating blindtext
+
+
+%%%%%%%%%%%%%%
+% document attributes
+\input{template/attributes}
+
+
+%%%%%%%%%%%%%%
+% booleans
+% todo list
+\newboolean{myaddlistoftodosBoolean}
+\setboolean{myaddlistoftodosBoolean}{\myaddlistoftodos} 
+
+%%%%%%%%%%%%%%
+% document
+\begin{document}
+
+% roman page numbers and such; only available in scrbook
+\frontmatter
+
+% include title page
+\input{\mytitlepage}
+
+% table of contents
+\tableofcontents\newpage
+
+% add todolist 
+\ifthenelse{\boolean{myaddlistoftodosBoolean}}{
+  \newpage\listoftodos
+}{}
+
+% marks main part using arabic page numbers and such; only available in scrbook
+\mainmatter 
+
+\input{content/content}
+
+\end{document}
