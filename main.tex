@@ -13,6 +13,11 @@
 
 
 %%%%%%%%%%%%%%
+% individual settings
+\input{individual/settings}
+
+
+%%%%%%%%%%%%%%
 % style
 \input{template/style}
 
@@ -84,7 +89,7 @@
 
 % table of contents
 \ifthenelse{\boolean{myAddTocBoolean}}{
-	\tableofcontents\newpage
+	\tableofcontents\newpage 
 }{}
 
 % add todolist 
@@ -93,7 +98,7 @@
 }{}
 
 % marks main part using arabic page numbers and such; only available in scrbook
-\mainmatter 
+\mainmatter
 
 \input{content/content}
 

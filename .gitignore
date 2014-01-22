@@ -1,3 +1,5 @@
+*.texnicle
+
 TSWLatexianTemp_*.tex
 TSWLatexianTemp_*.pdf
 *.acn
