@@ -1,40 +1,39 @@
 \setcounter{chapter}{1}
 
-
 \chapter{(1+1) - ES}
 
 \section{Implementierung: Minimierung}
 
-Der (1+1) Algorithmus wurde laut der Folie 61 implementiert. Im Anhang kann der Code begutachtet werden. Der Vergleich zwischen der Abbildung \ref{fig:plot_2a} und der Abbildung auf Folie 71 ergab, das wir die Aufgabe gelöst haben. Der Eingabevektor wird minimiert. Wenn nur eine kleine Grenze der Generationen übergeben wird, kann der Algorithmus nicht den Optimalen Wert finden.
+Der (1+1) Algorithmus wurde laut der Folie 61 implementiert. Im Anhang kann der Code begutachtet werden. Der Vergleich zwischen der Abbildung \ref{fig:plot_2a} und der Abbildung auf Folie 71 ergab, das wir die Aufgabe gelöst haben. Der Eingabevektor wird minimiert. Wenn nur eine kleine Grenze der Generationen übergeben wird, kann der Algorithmus nicht den optimalen Wert finden.
 
 \img{0.8}{content/aufgabe2/plot_2a.PNG}{(1+1)-ES Minimierung}{plot_2a}
 
 \section{Implementierung: Maximierung}
 
-Im Gegensatz zur vorherigen Implementierung, wurde die Bedienung zur Übernahme des besseren Wertes geändert, dadurch wird nicht der kleinere weiter verwendet sondern der größere. Die Abbruchbedienung wurde so abgeändert, das der Fitnesswert dem übergebenen N entspricht. Zusätzlich wird laut Aufgabe eine andere Fitness-Funktion verwendet. Für die Fitness-Funktion wurde eine Modulo 2 Operation verwendet. In Abbildung \ref{ref:plot_2b} erkennt man, das im Gegensatz zu Teilaufgabe 2.1 die Kurve eine Maximierung zeigt.
+Im Gegensatz zur vorherigen Implementierung, wurde die Bedingung zur Übernahme des besseren Wertes geändert, dadurch wird nicht der Kleinere weiter verwendet sondern der Größere. Die Abbruchbedingung wurde so abgeändert, das der Fitnesswert dem übergebenen N entspricht. Zusätzlich wird laut Aufgabe eine andere Fitness-Funktion verwendet. Für die Fitness-Funktion wurde eine Modulo 2 Operation verwendet. In Abbildung \ref{fig:plot_2b} erkennt man, das im Gegensatz zu Teilaufgabe 2.1 die Kurve eine Maximierung zeigt.
 
 \img{0.8}{content/aufgabe2/plot_2b.PNG}{(1+1)-ES Maximierung}{plot_2b}
 
 \newpage
 
-Die Laufzeitkomplexität des Algorithmus im Intervall von $N=10 ... 300$ überprüft. Dazu wurden die Ergebnisse der Laufzeit über 10 Durchläufe gemittelt. Aufgrund der langen Laufzeit haben wir uns dafür entschieden den Bereich in fünfziger Schritten abzustasten, dadurch ist in der Abbildung \ref{fig:plot_2b_mean} die Achsen Beschriftung mit $1-6$ angegeben. Zusätzlich kann aus der Abbildung herausgelesen werden, dass die Laufzeit nahezu linear ist.
+Die Laufzeitkomplexität des Algorithmus im Intervall von $N=10 ... 300$ wurde überprüft. Dazu wurden die Ergebnisse der Laufzeit über 10 Durchläufe gemittelt. Aufgrund der langen Laufzeit haben wir uns dafür entschieden den Bereich in fünfziger Schritten abzustasten, dadurch ist in der Abbildung \ref{fig:plot_2b_mean} die Achsen Beschriftung mit $1-6$ angegeben. Zusätzlich kann aus der Abbildung herausgelesen werden, dass die Laufzeit nahezu linear ist.
 
 \img{0.8}{content/aufgabe2/plot_2b_mean.PNG}{(1+1)-ES Laufzeit 10 Durchgänge Mittelung}{plot_2b_mean}
 
 \textbf{Deterministischer Algorithmus}\\
 
-Der einfachste Algorithmus wäre es all einzelnen Bits der Reihe nach kippen. Nach jedem dieser Vorgänge wird der Fitnesswert berechnet, falls dieser besser ist, wird dieser als neuer Wert verwendet. Dieser Algorithmus besitzt eine Wort case Laufzeit von $O(N)$.
+Der einfachste Algorithmus wäre es alle einzelnen Bits der Reihe nach kippen. Nach jedem dieser Vorgänge wird der Fitnesswert berechnet, falls dieser besser ist, wird dieser als neuer Wert verwendet. Dieser Algorithmus hat eine Worst-case-Laufzeit von $O(N)$.
 
 \chapter{(1+1) - ES: 1/5 Regel}
 
-Laut Aufgabe wurde der Algorithmus mit der 1/5 Regel erweitert. Dazu wurden die Änderungen aus Folie 76. Auch hier kann in erkannt werden, das die Abbildung \ref{fig:plot_3} ähnlich wie der in Folie 77 aussieht. Wobei Kurve einen flacheren Verlauf aufweise. Die Ergebnisse sind $sigma = 1.1808e^-7$ und $Generationen = 7501$ .
+Laut Aufgabe wurde der Algorithmus mit der 1/5 Regel erweitert. Dazu wurden die Änderungen aus Folie 76 übernommen. Auch hier kann erkannt werden, dass die Abbildung \ref{fig:plot_3} ähnlich wie der in Folie 77 aussieht. Wobei die Kurve einen flacheren Verlauf aufweist. Die Ergebnisse sind $sigma = 1.1808e^-7$ und $Generationen = 7501$ .
 
 \img{0.8}{content/aufgabe3/plot_3.PNG}{(1+1)-ES}{plot_3}
 
 \chapter{Abwandlung Aufgabe 3}
 
 Die Implementierung aus der Aufgabe 3 wurde so abgeändert, dass die Fitness-Funktion als Übergabeparameter übergeben werden kann. In Abbildung \ref{fig:4_Ridge_1d} ist die Auswertung mit der Parabolic-Ridge und in Abbildung \ref{fig:4_Sharp_1d} mit einem Faktor $d=1$ zusehen. Der Faktor wurde in den Abbildungen\ref{fig:4_Ridge_10d} und \ref{fig:4_Sharp_10d} auf $d=10$ erhöht.\\
-Aus den Abbildungen von Parabolic-Ridge ist ersichtlich, das nach $1000 Generationen$ bei $d = 10$ der Fitnesswert nicht weiter sinkt, jedoch bei $d = 1$ weiter sinkt.\\
+Aus den Abbildungen von Parabolic-Ridge ist ersichtlich, dass nach 1000 Generationen bei einem Faktor von $d = 10$ der Fitnesswert nicht weiter sinkt. Jedoch bei $d = 1$ auch nach 1000 Generationen einen sinkenden Verlauf aufweist.\\
 Bei Sharp-Ridge zeigen die beiden Abbildungen einen ziemlich unterschiedlichen Verlauf.
 
 \img{0.8}{content/aufgabe4/4_Ridge_1d.PNG}{Parabolic-Ridge d=1}{4_Ridge_1d}
@@ -44,17 +43,17 @@ Bei Sharp-Ridge zeigen die beiden Abbildungen einen ziemlich unterschiedlichen V
 
 \chapter{(1, $\lambda$) - $\sigma$SA - ES}
 
-Der (1, $\lambda$) - $\sigma$ SA - ES Algorithmus wurde laut Folie 92 implementiert. Die werte wurden aus der Folie 95 entnommen. Im Vergleich zwischen der Abbildung \ref{fig:plot_5} und der Abbildung auf Folie 95 kann erkannt werden, dass der Algorithmus richtig implementiert wurde.
+Der (1, $\lambda$) - $\sigma$ SA - ES Algorithmus wurde laut Folie 92 implementiert. Die Werte wurden aus der Folie 95 entnommen. Im Vergleich zwischen der Abbildung \ref{fig:plot_5} und der Abbildung auf Folie 95 kann erkannt werden, dass der Algorithmus richtig implementiert wurde.
 
 \img{0.8}{content/aufgabe5/plot_5.PNG}{(1, $\lambda$) - $\sigma$SA - ES: Kugelmodel}{plot_5}
 
-\chapter{($\mu$ / $\mu_1$, $\lambda$) - $\sigma$SA - ES}
+\chapter{($\mu$ / $\mu_I$, $\lambda$) - $\sigma$SA - ES}
 
-Die Implementierung aus der Aufgabe 5 wurde so abgewandelt, dass der $\sigma$SA - ES Algorithmus als Funktion aufgerufen werden kann und der $\mu$ / $\mu_1$ aus Parameter übergeben werden kann. Der $3/3r$ - ES wurde am Kugelmodell mit $N = 30$ getestet. Die Ergebnisse können in der Abbildung \ref{plot_6a} begutachtet werden.
+Die Implementierung aus der Aufgabe 5 wurde so abgewandelt, dass der $\sigma$SA - ES Algorithmus als Funktion aufgerufen werden kann und der $\mu$ / $\mu_1$ als Parameter übergeben werden kann. Der $3/3_I$ - ES wurde am Kugelmodell mit $N = 30$ getestet. Die Ergebnisse können in der Abbildung \ref{fig:plot_6a} begutachtet werden.
 
 \img{0.8}{content/aufgabe6/plot_6a.PNG}{$\mu=3$ und N=30}{plot_6a}
 
-Beim Test mit $N = 100$, befinden sich die Werte im Zulässigen Bereich ($ \mu=3$ $y = 3.7111e-8$ mit $785 Generationen$ und $\mu=1$ $y=2.2245e-7$ mit $1314 Generationen$).
+Beim Test mit $N = 100$, befinden sich die Werte im Zulässigen Bereich ($ \mu=3$ $y = 3.7111e-8$ mit 785 Generationen und $\mu=1$ $y=2.2245e-7$ mit 1314 Generationen).
 
 \img{0.8}{content/aufgabe6/plot_6b.PNG}{$\mu =1$ und N=100}{plot_6b}
 
