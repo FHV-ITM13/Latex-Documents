@@ -19,7 +19,6 @@
 
 %%%%%%%%%%%%%%
 % hacks
-% no hacks needed
 
 
 %%%%%%%%%%%%%%
@@ -35,7 +34,14 @@
 \usepackage{ifthen}   						% programming structure
 \usepackage[\mytodonotesoptions]{todonotes}		% todo command
 \usepackage{blindtext}						% generating blindtext
-
+% captions
+\usepackage{caption}
+% for multiline captions
+\captionsetup{
+  format=plain,
+  justification=centering,
+  singlelinecheck=off
+}
 
 %%%%%%%%%%%%%%
 % document attributes
@@ -64,7 +70,9 @@
 % todo list
 \newboolean{myAddSummaryBoolean}
 \setboolean{myAddSummaryBoolean}{\myaddsummary} 
-
+% references list
+\newboolean{myAddReferences}
+\setboolean{myAddReferences}{\myaddreferences} 
 %%%%%%%%%%%%%%
 % document
 \begin{document}
@@ -100,6 +108,11 @@
 % summary
 \ifthenelse{\boolean{myAddSummaryBoolean}}{
 	\input{content/summary}
+}{}
+
+% references
+\ifthenelse{\boolean{myAddReferences}}{
+	\input{content/references}
 }{}
 
 \end{document}
