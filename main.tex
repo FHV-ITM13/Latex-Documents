@@ -14,7 +14,7 @@
 
 %%%%%%%%%%%%%%
 % individual settings
-\input{individual/settings}
+\input{document/settings/settings}
 
 
 %%%%%%%%%%%%%%
@@ -74,7 +74,7 @@
 
 % abstract
 \ifthenelse{\boolean{myAddAbstractBoolean}}{
-	\input{content/abstract}
+	\input{document/content/abstract}
 }{}
 
 % table of contents
@@ -90,11 +90,11 @@
 % marks main part using arabic page numbers and such; only available in scrbook
 \mainmatter
 
-\input{content/content}
+\input{document/content/content}
 
 % summary
 \ifthenelse{\boolean{myAddSummaryBoolean}}{
-	\input{content/summary}
+	\input{document/content/summary}
 }{}
 
 \end{document}
