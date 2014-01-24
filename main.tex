@@ -23,7 +23,6 @@
 
 %%%%%%%%%%%%%%
 % hacks
-% no hacks needed
 
 
 %%%%%%%%%%%%%%
@@ -63,7 +62,9 @@
 % todo list
 \newboolean{myAddSummaryBoolean}
 \setboolean{myAddSummaryBoolean}{\myaddsummary} 
-
+% references list
+\newboolean{myAddReferences}
+\setboolean{myAddReferences}{\myaddreferences} 
 %%%%%%%%%%%%%%
 % document
 \begin{document}
@@ -78,7 +79,7 @@
 
 % abstract
 \ifthenelse{\boolean{myAddAbstractBoolean}}{
-	\input{document/content/abstract}
+	\input{document/other/abstract}
 }{}
 
 % table of contents
@@ -98,7 +99,12 @@
 
 % summary
 \ifthenelse{\boolean{myAddSummaryBoolean}}{
-	\input{document/content/summary}
+	\input{document/other/summary}
+}{}
+
+% references
+\ifthenelse{\boolean{myAddReferences}}{
+	\input{document/other/references}
 }{}
 
 \end{document}
