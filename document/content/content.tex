@@ -5,7 +5,7 @@
 
 In diesem Beispiel wird der Einfluss des $\mu$ in dem Algorithmus betrachtet. Hierfür wird die F-Dynamik in der Abbildung \ref{fig:plot_ue7_1} dargestellt. Als Testfunktion wird das Kugelmodell mit $N=100$ und $\mu=1...10$.
 
-\img{0.8}{document/graphics/ue07_f_dynamic.PNG}{F-Dynamik $(\mu/\mu_I,10)-\sigma SA-ES$ am Kugelmodell}{plot_ue7_1}
+\img{0.8}{document/graphics/ue07_f_dynamic_octave.PNG}{F-Dynamik $(\mu/\mu_I,10)-\sigma SA-ES$ am Kugelmodell}{plot_ue7_1}
 
 Die Abbildung zeigt, dass bei $\mu=10$ das Verfahren nicht mehr Terminiert. Begrenzt wird die Linie durch die Iterationsgrenze von 20.000.
 
@@ -31,17 +31,16 @@ Verglichen wird der Algorithmus $(1+1)-ES$ mit $1/5$ Regel mit dem Algorithmus $
     \hline
      & $(1+1)-ES$ & $(3/3_I,10)-\sigma SA-ES$ \\
     \hline
-    Generationen & 1 & 2 \\
+    Generationen & 7301 & 986 \\
     \hline
-    Funktionsauswertungen & 1 & 2 \\
+    Funktionsauswertungen & 7301 & 10846 \\
     \hline
   \end{tabular}
   \caption{Ergebnisse der Ausführung}
   \end{center}
 \end{table}
 
-\todo{Aufgabe 9 Werte}
-\todo{Aufgabe 9 Interpretation}
+Aus diesen Ergebnissen kann ermittelt werden, dass die Dauer der Funktionsauswertung für die Auswahl des Algorithmus ausschlaggebend ist. Ist diese Dauer klein, ist der $(3/3_I,10)-\sigma SA-ES$ Algorithmus insgesamt schneller, da weniger generationen benötigt werden. Ist die Dauer der Funktionsauswertung hoch, ist der $(1+1)-ES$ Algorithmus aufgrund der kleineren Zahl der Funktionsauswertungen schneller.
 
 \chapter{$(\mu/\mu_I,20)-\sigma SA-ES$ am verrauschen Kugelmodell}
 
@@ -49,6 +48,8 @@ Diese Aufgabe beschäftigt sich mit der Performance des Algorithmus $(\mu/\mu_I,
 Der Algorithmus wurde über 3000 Generationen durchgeführt. In der Abbildung \todo{ref: Aufgabe 10} wird die Dynamik des Restzielabstandes $||y^{(g)}||$ des elterlichen Restkombinanten dargestellt.
 
 \todo{Abbildung (Aufgabe 10): Dynamik des Restzielabstandes $||y^{(g)}||$}
+
+\todo{Aufgabe 10}
 
 \chapter{$(\mu/\mu_I,\lambda)-\sigma SA-ES$ an der Rastrigin-Funktion}
 
@@ -66,6 +67,7 @@ In dieser Aufgabe wird das Verhalten des $(\mu/\mu_I,\lambda)-\sigma SA-ES$ Algo
 
 Als initialwerte wurde $N=30$, $\sigma_{init}=1$ und $y_{init}={10,...,10}^T$ verwendet.
 
+\todo{Aufgabe 11}
 
 \chapter{CMSA-ES für Linsenoptimierung}
 
@@ -74,6 +76,8 @@ Diese Aufgabe soll zeigen, dass die Kovarianzmatrix-Adaption wichtig für die pe
 Als initialwerte wurde $N=30$, $\sigma_{init}=1$ und $y_{init}={10,...,10}^T$ verwendet.
 
 \todo{Abbildung (Aufgabe 12): Dynamiken des CMSA-ES mit dem $(\mu/\mu_I,\lambda)-\sigma SA-ES$ am Linsenproblem}
+
+\todo{Aufgabe 12}
 
 
 
