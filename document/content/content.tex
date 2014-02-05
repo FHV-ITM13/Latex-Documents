@@ -1,17 +1,81 @@
-\chapter{Das ist ein Test}
+% todo extract counter to main under \document
+\setcounter{chapter}{6}
 
-In der Abbildung \ref{fig:gull} können Sie eine Möwe sehen.
+\chapter{$(\mu/\mu_I,10)-\sigma SA-ES$ am Kugelmodell}
 
-\img{0.5}{document/graphics/gull.jpg}{Quelle: http://de.wikipedia.org/wiki/Möwen}{gull}
+In diesem Beispiel wird der Einfluss des $\mu$ in dem Algorithmus betrachtet. Hierfür wird die F-Dynamik in der Abbildung \ref{fig:plot_ue7_1} dargestellt. Als Testfunktion wird das Kugelmodell mit $N=100$ und $\mu=1...10$.
 
-In der Abbildung \ref{fig:biene} können Sie eine Biene sehen:
+\img{0.8}{document/graphics/ue07_f_dynamic.PNG}{F-Dynamik $(\mu/\mu_I,10)-\sigma SA-ES$ am Kugelmodell}{plot_ue7_1}
 
-\imgsrc{0.3}{document/graphics/biene.png}{Ich bin eine Bieene.}{biene}{frag google!}
+Die Abbildung zeigt, dass bei $\mu=10$ das Verfahren nicht mehr Terminiert. Begrenzt wird die Linie durch die Iterationsgrenze von 20.000.
 
-In Listing \ref{lst:example} können Sie ein Beispiel Code sehen.
+\chapter{$(3/3_I,10)-\sigma SA-ES$ am Kugelmodell}
 
-\lstfile[php]{document/scripts/example.pl}{example caption}{example}
+Diese Aufgabe betrachtet den Einfluss von T auf den $(3/3_I,10)-\sigma SA-ES$ Algorithmus am Kugelmodell mit $N=100$, $\sigma=0.1$ und $y_{init}=(1,...,1)^T$. Auch in dieser Aufgabe wird die F-Dynamik in der Abbildung \ref{fig:plot_ue8_1} dargestellt.
 
-\Blinddocument
+\img{0.8}{document/graphics/ue08_f_dynamic.PNG}{F-Dynamik $(3/3_I,10)-\sigma SA-ES$ am Kugelmodell}{plot_ue8_1}
 
-\Blinddocument
+Bei $\tau=0$ kann beobachtet werden, dass aufgrund der fehlenden $\sigma - Adaption$, der Wert konvergiert.
+
+\img{0.8}{document/graphics/ue08_s_dynamic.PNG}{$\sigma$-Dynamik $(3/3_I,10)-\sigma SA-ES$ am Kugelmodell}{plot_ue8_2}
+
+Auch die Abbildung \ref{fig:plot_ue8_2} zeigt, dass bei $\tau=0$ der Wert stagniert.
+
+\chapter{Performance Vergleich}
+
+Verglichen wird der Algorithmus $(1+1)-ES$ mit $1/5$ Regel mit dem Algorithmus $(3/3_I,10)-\sigma SA-ES$. Als Testfunktion wird das Kugelmodell mit $N=100$ verwendet. Der Vergleich erfolgt auf Basis der Generationen und aufgrund der Anzahl an Funktionsauswertungen.\\
+
+\begin{table}[h]
+  \begin{center}
+  \begin{tabular}{|l|p{5cm}|p{5cm}|}
+    \hline
+     & $(1+1)-ES$ & $(3/3_I,10)-\sigma SA-ES$ \\
+    \hline
+    Generationen & 1 & 2 \\
+    \hline
+    Funktionsauswertungen & 1 & 2 \\
+    \hline
+  \end{tabular}
+  \caption{Ergebnisse der Ausführung}
+  \end{center}
+\end{table}
+
+\todo{Aufgabe 9 Werte}
+\todo{Aufgabe 9 Interpretation}
+
+\chapter{$(\mu/\mu_I,20)-\sigma SA-ES$ am verrauschen Kugelmodell}
+
+Diese Aufgabe beschäftigt sich mit der Performance des Algorithmus $(\mu/\mu_I,20)-\sigma SA-ES$ am verrauschten Kugelmodell. Hierfür wird $F(y)=||y||^2+\mathcal{N}(0,1)$, $N=100$, $y_{init}=(10,...,10)^T$ und $\sigma_{init}=1$.
+Der Algorithmus wurde über 3000 Generationen durchgeführt. In der Abbildung \todo{ref: Aufgabe 10} wird die Dynamik des Restzielabstandes $||y^{(g)}||$ des elterlichen Restkombinanten dargestellt.
+
+\todo{Abbildung (Aufgabe 10): Dynamik des Restzielabstandes $||y^{(g)}||$}
+
+\chapter{$(\mu/\mu_I,\lambda)-\sigma SA-ES$ an der Rastrigin-Funktion}
+
+In dieser Aufgabe wird das Verhalten des $(\mu/\mu_I,\lambda)-\sigma SA-ES$ Algorithmus an der Rastrigin-Funktion (Abbildung \ref{fig:rastrigin}) untersucht.
+
+\begin{figure}[h]
+  \label{fig:rastrigin}
+  \begin{center}
+  
+    $F(y)=\sum_{i=1}^N(a-a*cos(2\pi y_i)+y_i^2), a=2$
+    
+    \caption{Rastrigin Funktion}
+  \end{center}
+\end{figure}
+
+Als initialwerte wurde $N=30$, $\sigma_{init}=1$ und $y_{init}={10,...,10}^T$ verwendet.
+
+
+\chapter{CMSA-ES für Linsenoptimierung}
+
+Diese Aufgabe soll zeigen, dass die Kovarianzmatrix-Adaption wichtig für die perfomante Optimierung des ES ist. Diese Annahme bestätigt die Abbildung \todo{ref: Aufgabe 12}. Diese Abbildung zeigt die Dynamiken des CMSA-ES mit dem $(\mu/\mu_I,\lambda)-\sigma SA-ES$ am Linsenproblem.
+
+Als initialwerte wurde $N=30$, $\sigma_{init}=1$ und $y_{init}={10,...,10}^T$ verwendet.
+
+\todo{Abbildung (Aufgabe 12): Dynamiken des CMSA-ES mit dem $(\mu/\mu_I,\lambda)-\sigma SA-ES$ am Linsenproblem}
+
+
+
+
+
