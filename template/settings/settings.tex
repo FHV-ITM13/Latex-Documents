@@ -2,13 +2,17 @@
 % 
 % Author: Wachter Johannes
 % Date: 17.01.2014
-% File: settings/settings.tex
+% File: template/settings.tex
 %
 % Document Settings
 
 \newcommand{\mypapersize}{A4}
 % e.g., "A4", "letter", "legal", "executive", ...
 % The size of the paper of the resulting PDF file.
+
+\newcommand{\mytype}{true}
+% e.g. true=print, false=screen
+% optimize output for this type
 
 \newcommand{\mylaterality}{twoside}
 % "oneside" or "twoside"
@@ -73,3 +77,15 @@
 \newcommand{\myaddreferences}{true}
 % e.g. true / false
 % should it be displayed
+
+% listings
+\newcommand{\mylstframe}{true}
+% e.g. true/false
+% frame around listings
+\newcommand{\mylstframeleftmargin}{1.5em}
+\newcommand{\mylstleftmargin}{2.0em}
+% e.g. 1.5em
+% margin for frame and code
+\newcommand{\mylstlanguage}{perl}
+% e.g. perl/c++/php ...
+% set default language

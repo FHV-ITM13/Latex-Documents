@@ -1,0 +1,37 @@
+%%%%%%%%%%%%%%%%%%%%%
+% 
+% Author: Wachter Johannes
+% Date: 22.01.2014
+% File: template/packages.tex
+%
+% Document packages
+
+% basic
+\usepackage{color}
+
+% language
+\usepackage[utf8]{inputenc}	% utf8 input
+\usepackage[\mylanguage]{babel} % language
+\usepackage[T1]{fontenc}
+
+% images
+\usepackage{eso-pic}
+\usepackage{graphicx}
+
+% structures
+\usepackage{ifthen} % programming structure
+\usepackage[\mytodonotesoptions]{todonotes} % todo command
+\usepackage{blindtext} % generating blindtext
+\usepackage{etoolbox}
+
+% modules
+\input{template/modules/listing}
+
+% captions
+\usepackage{caption}
+% for multiline captions
+\captionsetup{
+  format=plain,
+  justification=centering,
+  singlelinecheck=off
+}
