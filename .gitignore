@@ -1,7 +1,9 @@
-*.texnicle
+#*.texnicle
 
 TSWLatexianTemp_*.tex
 TSWLatexianTemp_*.pdf
+/.texpadtmp/
+
 *.acn
 *.acr
 *.alg

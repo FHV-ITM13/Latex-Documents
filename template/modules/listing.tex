@@ -40,13 +40,39 @@
   title=\lstname                      % show the filename of files included with \lstinputlisting; also try caption instead of title
 }
 
+% frame
+% boolean
 \newboolean{myLstFrame}
-\setboolean{myLstFrame}{\mylstframe} 
+\setboolean{myLstFrame}{\mylstframe}
+% set frame
+\ifthenelse{\boolean{myLstFrame}}{
+  \lstset{frame=single}
+}{
+  \lstset{frame=none}
+}
 
-\newcommand{\lstfile}[4][\mylstlanguage]{
-  \ifthenelse{\boolean{myLstFrame}}{
-    \lstinputlisting[language=#1,caption={#3},label={lst:#4},frame=single]{#2}
-  }{
-    \lstinputlisting[language=#1,caption={#3},label={lst:#4},frame=none]{#2}
+% codefile command
+\DeclareDocumentCommand{\codefile}{O{false} O{false} O{\mylstlanguage} m m m}{
+  \lstset{language=#3,caption={#5},label={\codelabelprefix:#6}}
+  \ifthenelse{\equal{#1}{false}}{}{
+    \ifthenelse{\equal{#2}{false}}{
+      \lstinputlisting[firstline=#1]{#4}
+    }{
+      \lstinputlisting[firstline=#1,lastline=#2]{#4}
+    }
   }
 }
+
+% coderef command
+\newcommand{\coderef}[1]{\ref{\codelabelprefix:#1}}
+
+% code environment
+\lstnewenvironment{code}[3][\mylstlanguage]{
+  \lstset{
+    float,
+    language=#1,
+    caption={#2},
+    label={\codelabelprefix:#3}
+  }
+} 
+{} 
