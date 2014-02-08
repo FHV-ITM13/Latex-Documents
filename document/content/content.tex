@@ -45,11 +45,13 @@ Aus diesen Ergebnissen kann ermittelt werden, dass die Dauer der Funktionsauswer
 \chapter{$(\mu/\mu_I,20)-\sigma SA-ES$ am verrauschen Kugelmodell}
 
 Diese Aufgabe beschäftigt sich mit der Performance des Algorithmus $(\mu/\mu_I,20)-\sigma SA-ES$ am verrauschten Kugelmodell. Hierfür wird $F(y)=||y||^2+\mathcal{N}(0,1)$, $N=100$, $y_{init}=(10,...,10)^T$ und $\sigma_{init}=1$.
-Der Algorithmus wurde über 3000 Generationen durchgeführt. In der Abbildung \todo{ref: Aufgabe 10} wird die Dynamik des Restzielabstandes $||y^{(g)}||$ des elterlichen Restkombinanten dargestellt.
+Der Algorithmus wurde über 3000 Generationen durchgeführt. In der Abbildung \ref{fig:plot_ue10_1} wird die Dynamik des Restzielabstandes $||y^{(g)}||$ des elterlichen Restkombinanten dargestellt. In dieser Abbildung ist zu sehen, dass durch die Verrauschung das Optimum nicht erreicht werden kann.    
 
-\todo{Abbildung (Aufgabe 10): Dynamik des Restzielabstandes $||y^{(g)}||$}
+\img{0.8}{document/graphics/ue10_1_mu.PNG}{Dynamik des Restzielabstandes $||y^{(g)}||$}{plot_ue10_1}
 
-\todo{Aufgabe 10}
+\img{1}{document/graphics/ue10_2.PNG}{Optimales $\mu$}{plot_ue10_2}
+
+Wird das $\mu$ erhöht, verringert sich der Restzielabstand, daher liefert der Algorithmus bessere Ergebnisse. In der Abbildung \ref{fig:plot_ue10_2} kann ab einem $\mu = 5$ beobachtet werden, dass sich keine sichtliche Verbesserung mehr einstellt.
 
 \chapter{$(\mu/\mu_I,\lambda)-\sigma SA-ES$ an der Rastrigin-Funktion}
 
@@ -74,14 +76,13 @@ In der Abbildung \ref{fig:plot_ue11_1} kann beobachtet werden, dass je größer 
 
 \chapter{CMSA-ES für Linsenoptimierung}
 
-Diese Aufgabe soll zeigen, dass die Kovarianzmatrix-Adaption wichtig für die perfomante Optimierung des ES ist. Diese Annahme bestätigt die Abbildung \todo{ref: Aufgabe 12}. Diese Abbildung zeigt die Dynamiken des CMSA-ES mit dem $(\mu/\mu_I,\lambda)-\sigma SA-ES$ am Linsenproblem.
+Diese Aufgabe soll zeigen, dass die Kovarianzmatrix-Adaption wichtig für die perfomante Optimierung des ES ist. Diese Annahme bestätigt die Abbildung \ref{fig:plot_ue12_1}. Diese Abbildung zeigt die Dynamiken des CMSA-ES mit dem $(\mu/\mu_I,\lambda)-\sigma SA-ES$ am Linsenproblem.
 
 Als initialwerte wurde $N=30$, $\sigma_{init}=1$ und $y_{init}={10,...,10}^T$ verwendet.
 
-\todo{Abbildung (Aufgabe 12): Dynamiken des CMSA-ES mit dem $(\mu/\mu_I,\lambda)-\sigma SA-ES$ am Linsenproblem}
+\img{0.8}{document/graphics/ue12_1.PNG}{Dynamiken des CMSA-ES mit dem $(\mu/\mu_I,\lambda)-\sigma SA-ES$ am Linsenproblem}{plot_ue12_1}
 
-\todo{Aufgabe 12}
-
+In der obigen Abbildung kann beobachtet werden, dass sich beide Algorithmen änlich verhalten. Der Knick im CMSA-ES Algorithmus, ergibt sich durch die Anpassung der Kovarianzmatrix.
 
 
 
