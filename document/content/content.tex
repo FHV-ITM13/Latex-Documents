@@ -7,11 +7,11 @@ In diesem Beispiel wird der Einfluss des $\mu$ in dem Algorithmus betrachtet. Hi
 
 \img{0.8}{document/graphics/ue07_f_dynamic_octave.PNG}{F-Dynamik $(\mu/\mu_I,10)-\sigma SA-ES$ am Kugelmodell}{plot_ue7_1}
 
-Die Abbildung zeigt, dass bei $\mu=10$ das Verfahren nicht mehr Terminiert. Begrenzt wird die Linie durch die Iterationsgrenze von 20.000.
+Die Abbildung zeigt, dass bei $\mu=10$ das Verfahren nicht mehr steil gegen 0 sinkt. Durch die Begrenzung nach der Iterationsgrenze von 15.000 abgebrochen.
 
 \chapter{$(3/3_I,10)-\sigma SA-ES$ am Kugelmodell}
 
-Diese Aufgabe betrachtet den Einfluss von T auf den $(3/3_I,10)-\sigma SA-ES$ Algorithmus am Kugelmodell mit $N=100$, $\sigma=0.1$ und $y_{init}=(1,...,1)^T$. Auch in dieser Aufgabe wird die F-Dynamik in der Abbildung \ref{fig:plot_ue8_1} dargestellt.
+Diese Aufgabe betrachtet den Einfluss von $\tau$ auf den $(3/3_I,10)-\sigma SA-ES$ Algorithmus am Kugelmodell mit $N=100$, $\sigma=0.1$ und $y_{init}=(1,...,1)^T$. Auch in dieser Aufgabe wird die F-Dynamik in der Abbildung \ref{fig:plot_ue8_1} dargestellt.
 
 \img{0.8}{document/graphics/ue08_f_dynamic.PNG}{F-Dynamik $(3/3_I,10)-\sigma SA-ES$ am Kugelmodell}{plot_ue8_1}
 
@@ -66,9 +66,11 @@ In dieser Aufgabe wird das Verhalten des $(\mu/\mu_I,\lambda)-\sigma SA-ES$ Algo
   \label{fig:rastrigin}
 \end{figure}
 
-Als initialwerte wurde $N=30$, $\sigma_{init}=1$ und $y_{init}={10,...,10}^T$ verwendet.
+Als Initialwerte wurden $N=30$, $\sigma_{init}=1$ und $y_{init}={10,...,10}^T$ verwendet.
 
-\todo{Aufgabe 11}
+\img{0.8}{document/graphics/ue11_mu_rastrigin.PNG}{Testfunktion RASTRIGIN}{plot_ue11_1}
+
+In der Abbildung \ref{fig:plot_ue11_1} kann beobachtet werden, dass je größer $\mu$ wird desto weniger Generationen werden benötigt, um das Optimum zu finden. Ab etwa $\mu = 20$ bringt eine erhöhung kaum verbesserungen mit sich. Gegenläufig kann beobachtet werden, dass die Anzahl der Funktionsaufrufe mit erhöhtem $\mu$ steigt. Daher ist auch bei diesem Algorithmus das $\mu$, je nach geschwindigkeit des Funktionsaufrufes, mit vorsicht zu wählen.
 
 \chapter{CMSA-ES für Linsenoptimierung}
 
