@@ -1,4 +1,6 @@
-\chapter{Das ist ein Test}
+\chapter{Tutorial}
+
+\section{Images}
 
 In der Abbildung \imgref{gull} können Sie eine Möwe sehen.
 
@@ -8,7 +10,17 @@ In der Abbildung \imgref{biene} können Sie eine Biene sehen:
 
 \imgsrc{0.3}{document/graphics/biene.png}{Ich bin eine Bieene.}{biene}{frag google!}
 
-\chapter{Listings}
+\begin{code}[tex]{Inline code}{Inline code}
+You can see a Gull in Abbildung \imgref{gull1}.
+
+\img{0.5}{document/graphics/gull.jpg}{Quelle: http://de.wikipedia.org/wiki/Moewen}{gull1}
+
+And a bee in Abbildung \imgref{biene1}:
+
+\imgsrc{0.3}{document/graphics/biene.png}{Ich bin eine Bieene.}{biene1}{frag google!}
+\end{code}
+
+\section{Listings}
 
 In Listing \coderef{example} können Sie ein Beispiel Code sehen.
 
@@ -54,7 +66,7 @@ void main(void) {
 \ end{code}
 \end{code}
 
-\chapter{Bibtex}
+\section{Bibtex}
 
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. \cite{bibtex.a}
 
@@ -70,9 +82,11 @@ In das Suchfeld muss dabei lediglich die ISBN eingetragen werden.\\
 Mit dem Literaturverwaltungsprogramm zotero lassen sich auch bibtex-Dateien exportieren.\\
 \url{http://www.zotero.org}
 
-\chapter{Algorithm}
+\section{Algorithm}
 
-\begin{algo}{How to write algorithms}{algo:algo1}
+This Algoorithm \algoref{algo1} is great to learn.
+
+\begin{algo}{How to write algorithms}{algo1}
  \KwData{this text}
  \KwResult{how to write algorithm with \LaTeX2e }
  initialization\;
@@ -86,6 +100,25 @@ Mit dem Literaturverwaltungsprogramm zotero lassen sich auch bibtex-Dateien expo
   }
  }
 \end{algo}
+
+\begin{code}[Tex]{Algorithm code}{algorithm}
+This Algoorithm \algoref{algo1} is great to learn.
+
+\begin{algo}{How to write algorithms}{algo1}
+ \KwData{this text}
+ \KwResult{how to write algorithm with \LaTeX2e }
+ initialization\;
+ \While{not at end of this document}{
+  read current\;
+  \eIf{understand}{
+   go to next section\;
+   current section becomes this one\;
+   }{
+   go back to the beginning of current section\;
+  }
+ }
+\end{algo}
+\end{code}
 
 \Blinddocument
 
