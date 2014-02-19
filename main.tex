@@ -5,11 +5,15 @@
 % File: main.tex
 %
 % Main
-% TODO include pdf - attributes
 
 %%%%%%%%%%%%%%
 % settings
-\input{template/settings}
+\input{template/settings/settings}
+
+
+%%%%%%%%%%%%%%
+% individual settings
+\input{document/settings/settings}
 
 
 %%%%%%%%%%%%%%
@@ -19,33 +23,21 @@
 
 %%%%%%%%%%%%%%
 % hacks
-
+% I need no hack
 
 %%%%%%%%%%%%%%
-% packges
-% language
-\usepackage[utf8]{inputenc}		% utf8 input
-\usepackage[\mylanguage]{babel} 	% language
-\usepackage[T1]{fontenc}
-% images
-\usepackage{eso-pic}
-\usepackage{graphicx}
-% structures
-\usepackage{ifthen}   						% programming structure
-\usepackage[\mytodonotesoptions]{todonotes}		% todo command
-\usepackage{blindtext}						% generating blindtext
-% captions
-\usepackage{caption}
-% for multiline captions
-\captionsetup{
-  format=plain,
-  justification=centering,
-  singlelinecheck=off
-}
+% packages
+\input{template/packages}
+
 
 %%%%%%%%%%%%%%
 % document attributes
-\input{template/attributes}
+\input{document/settings/attributes}
+
+
+%%%%%%%%%%%%%%
+% pdf settings
+\input{template/settings/pdf}
 
 
 %%%%%%%%%%%%%%
@@ -64,18 +56,29 @@
 % table of contents
 \newboolean{myAddTocBoolean}
 \setboolean{myAddTocBoolean}{\myaddtoc} 
+% table of listings
+\newboolean{myAddTolBoolean}
+\setboolean{myAddTolBoolean}{\myaddtol} 
+% table of figures
+\newboolean{myAddTofBoolean}
+\setboolean{myAddTofBoolean}{\myaddtof} 
 % todo list
 \newboolean{myAddListOfTodosBoolean}
 \setboolean{myAddListOfTodosBoolean}{\myaddlistoftodos} 
-% todo list
+% summary
 \newboolean{myAddSummaryBoolean}
 \setboolean{myAddSummaryBoolean}{\myaddsummary} 
 % references list
 \newboolean{myAddReferences}
-\setboolean{myAddReferences}{\myaddreferences} 
+\setboolean{myAddReferences}{\myaddreferences}
+
+
 %%%%%%%%%%%%%%
 % document
 \begin{document}
+
+% setcounter for chapter
+\setcounter{chapter}{\chapternumber}
 
 % roman page numbers and such; only available in scrbook
 \frontmatter
@@ -87,12 +90,22 @@
 
 % abstract
 \ifthenelse{\boolean{myAddAbstractBoolean}}{
-	\input{content/abstract}
+	\input{document/other/abstract}
 }{}
 
 % table of contents
 \ifthenelse{\boolean{myAddTocBoolean}}{
-	\tableofcontents\newpage
+	\tableofcontents\newpage 
+}{}
+
+% table of listings
+\ifthenelse{\boolean{myAddTolBoolean}}{
+	\lstlistoflistings\newpage 
+}{}
+
+% table of figures
+\ifthenelse{\boolean{myAddTofBoolean}}{
+	\listoffigures\newpage 
 }{}
 
 % add todolist 
@@ -101,18 +114,18 @@
 }{}
 
 % marks main part using arabic page numbers and such; only available in scrbook
-\mainmatter 
+\mainmatter
 
-\input{content/content}
+\input{document/content/content}
 
 % summary
 \ifthenelse{\boolean{myAddSummaryBoolean}}{
-	\input{content/summary}
+	\input{document/other/summary}
 }{}
 
 % references
 \ifthenelse{\boolean{myAddReferences}}{
-	\input{content/references}
+	\input{document/other/references}
 }{}
 
 \end{document}

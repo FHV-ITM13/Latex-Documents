@@ -1,0 +1,40 @@
+%%%%%%%%%%%%%%%%%%%%%
+% 
+% Author: Wachter Johannes
+% Date: 23.01.2014
+% File: template/settings/pdf.tex
+%
+% PDF settings
+% TODO: black-and-white-version for printing!
+
+\pdfcompresslevel=9
+
+\newcommand{\mycolorlinks}{on}
+\ifthenelse{\boolean{myLstFrame}}{
+  \renewcommand{\mycolorlinks}{off}
+}{}
+
+\typeout{HALLLLOOOO}
+\typeout{\mycolorlinks}
+
+\usepackage[
+pdftitle={\mytitle},
+pdfauthor={\myauthor},
+pdfsubject={\mysubject},
+pdfcreator={Accomplished with: pdfLaTeX, biber, and hyperref-package. No anmimals, MS-EULA or BSA-rules were harmed.},
+pdfproducer={\myauthor},
+pdfkeywords={\mykeywords},
+pdftex=true,
+backref,
+pagebackref=false, % creates backward references too
+bookmarks=true,
+bookmarksopen=false, % when starting with AcrobatReader, the Bookmarkcolumn is opened
+pdfpagemode=None,% None, UseOutlines, UseThumbs, FullScreen
+plainpages=false, % correct, if pdflatex complains: ``destination with same identifier already exists''
+urlcolor=DispositionColor,
+linkcolor=DispositionColor,
+pagecolor=DispositionColor,
+citecolor=DispositionColor,
+anchorcolor=DispositionColor,
+colorlinks=\mycolorlinks
+]{hyperref}

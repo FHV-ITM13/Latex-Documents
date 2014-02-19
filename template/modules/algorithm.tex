@@ -1,0 +1,26 @@
+%%%%%%%%%%%%%%%%%%%%%
+% 
+% Author: Wachter Johannes
+% Date: 09.02.12014
+% File: template/modules/algorithm.tex
+%
+% Module algorithm
+\ifthenelse{\boolean{myLstFrame}}{
+  \usepackage[boxed,linesnumbered]{algorithm2e}
+  \setlength{\algomargin}{2em}
+}{
+  \usepackage[linesnumbered]{algorithm2e}
+}
+
+% coderef command
+\newcommand{\algoref}[1]{\ref{\algolabelprefix:#1}}
+
+% algo environment
+\newenvironment{algo}[2]{
+  \begin{algorithm}[H]
+    \caption{#1}
+    \label{\algolabelprefix:#2}
+} 
+{
+  \end{algorithm}
+} 
