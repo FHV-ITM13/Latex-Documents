@@ -3,15 +3,6 @@ Latex-Documents
 
 ## Usage
 
-Create or Clone own empty repository:
+You need to install [TeXnicCenter](http://www.texniccenter.org/) and clone/copy this branch.
 
-```
-git remote add template git@github.com:FHV-ITM13/Latex-Documents.git
-git pull template master
-```
-
-Push it to your own Repository:
-
-```
-git push origin master
-```
+Afterwards you can open the project within the software via File -> Open -> Project.
