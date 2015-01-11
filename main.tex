@@ -71,7 +71,12 @@
 % references list
 \newboolean{myAddReferences}
 \setboolean{myAddReferences}{\myaddreferences}
-
+% attatchment
+\newboolean{myAddAttachment}
+\setboolean{myAddAttachment}{\myaddattachment}
+% references list
+\newboolean{myAddStatutoryDeclaration}
+\setboolean{myAddStatutoryDeclaration}{\myaddstatutorydeclaration}
 
 %%%%%%%%%%%%%%
 % document
@@ -128,4 +133,13 @@
 	\input{document/other/references}
 }{}
 
+% attachment
+\ifthenelse{\boolean{myAddAttachment}}{
+	\input{document/other/attachment}
+}{}
+
+% statutory declaration
+\ifthenelse{\boolean{myAddStatutoryDeclaration}}{
+	\input{document/other/statutorydeclaration}
+}{}
 \end{document}
