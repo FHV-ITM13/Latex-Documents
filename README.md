@@ -1,4 +1,4 @@
-Template for FHV master thesis
+Latex template for FHV master thesis
 ===============
 
 ## Template information
