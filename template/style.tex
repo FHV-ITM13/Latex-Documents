@@ -1,0 +1,49 @@
+%%%%%%%%%%%%%%%%%%%%%
+% 
+% Author: Wachter Johannes
+% Date: 17.01.2014
+% File: template/style.tex
+%
+% Document Style
+
+% general style
+\documentclass[
+	fontsize=\myfontsize,	% size of the main text
+	paper=\mypapersize,  	% paper format
+	parskip=\myparskip,  	% vertical space between paragraphs (instead of indenting first par-line)
+	DIV=calc,           		% calculates a good DIV value for type area; 66 characters/line is great
+	headinclude=true,    		% is header part of margin space or part of page content?
+	footinclude=false,   		% is footer part of margin space or part of page content?
+	open=right,          		% "right" or "left": start new chapter on right or left page
+	appendixprefix=true, 	% adds appendix prefix; only for book-classes with \backmatter
+	bibliography=totoc,  		% adds the bibliography to table of contents (without number)
+	draft=\mydraft,      		% if true: included graphics are omitted and black boxes
+                     				% mark overfull boxes in margin space
+	BCOR=\myBCOR,        	% binding correction (depends on how you bind
+				                  % the resulting printout.
+	\mylaterality,        		% oneside: document is not printed on left and right sides, only right side
+                     				% twoside: document is printed on left and right sides
+	scrpage2
+]{scrbook}
+
+\usepackage[
+  left=\myleft,
+  right=\myright,
+  top=\mytop,
+  bottom=\mybottom,
+  includeheadfoot
+]{geometry}
+\usepackage[automark,headsepline]{scrpage2}
+\deftripstyle{pagestyle}
+	[0mm]
+	[0.3mm]
+	{}				% top left
+  	{\leftmark}			% top center
+  	{}				% top right
+ 	{\pagemark}		% bottom left
+  	{}				% bottom center
+  	{\myshortauthor}	% bottom right
+
+\pagestyle{pagestyle}
+% use "pagestyle" also on chapter starting pages
+\renewcommand{\chapterpagestyle}{pagestyle}

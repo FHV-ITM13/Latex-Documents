@@ -1,0 +1,131 @@
+%%%%%%%%%%%%%%%%%%%%%
+% 
+% Author: Wachter Johannes
+% Date: 17.01.2014
+% File: main.tex
+%
+% Main
+
+%%%%%%%%%%%%%%
+% settings
+\input{template/settings/settings}
+
+
+%%%%%%%%%%%%%%
+% individual settings
+\input{document/settings/settings}
+
+
+%%%%%%%%%%%%%%
+% style
+\input{template/style}
+
+
+%%%%%%%%%%%%%%
+% hacks
+% I need no hack
+
+%%%%%%%%%%%%%%
+% packages
+\input{template/packages}
+
+
+%%%%%%%%%%%%%%
+% document attributes
+\input{document/settings/attributes}
+
+
+%%%%%%%%%%%%%%
+% pdf settings
+\input{template/settings/pdf}
+
+
+%%%%%%%%%%%%%%
+% own commands
+\input{template/commands}
+
+
+%%%%%%%%%%%%%%
+% booleans
+% title page
+\newboolean{myAddTitleBoolean}
+\setboolean{myAddTitleBoolean}{\myaddtitle} 
+% abstract
+\newboolean{myAddAbstractBoolean}
+\setboolean{myAddAbstractBoolean}{\myaddabstract} 
+% table of contents
+\newboolean{myAddTocBoolean}
+\setboolean{myAddTocBoolean}{\myaddtoc} 
+% table of listings
+\newboolean{myAddTolBoolean}
+\setboolean{myAddTolBoolean}{\myaddtol} 
+% table of figures
+\newboolean{myAddTofBoolean}
+\setboolean{myAddTofBoolean}{\myaddtof} 
+% todo list
+\newboolean{myAddListOfTodosBoolean}
+\setboolean{myAddListOfTodosBoolean}{\myaddlistoftodos} 
+% summary
+\newboolean{myAddSummaryBoolean}
+\setboolean{myAddSummaryBoolean}{\myaddsummary} 
+% references list
+\newboolean{myAddReferences}
+\setboolean{myAddReferences}{\myaddreferences}
+
+
+%%%%%%%%%%%%%%
+% document
+\begin{document}
+
+% setcounter for chapter
+\setcounter{chapter}{\chapternumber}
+
+% roman page numbers and such; only available in scrbook
+\frontmatter
+
+% include title page
+\ifthenelse{\boolean{myAddTitleBoolean}}{
+	\input{\mytitlepage}
+}{}
+
+% abstract
+\ifthenelse{\boolean{myAddAbstractBoolean}}{
+	\input{document/other/abstract}
+}{}
+
+% table of contents
+\ifthenelse{\boolean{myAddTocBoolean}}{
+	\tableofcontents\newpage 
+}{}
+
+% table of listings
+\ifthenelse{\boolean{myAddTolBoolean}}{
+	\lstlistoflistings\newpage 
+}{}
+
+% table of figures
+\ifthenelse{\boolean{myAddTofBoolean}}{
+	\listoffigures\newpage 
+}{}
+
+% add todolist 
+\ifthenelse{\boolean{myAddListOfTodosBoolean}}{
+	\newpage\listoftodos
+}{}
+
+% marks main part using arabic page numbers and such; only available in scrbook
+\mainmatter
+
+\input{document/content/content}
+
+% summary
+\ifthenelse{\boolean{myAddSummaryBoolean}}{
+	\input{document/other/summary}
+}{}
+
+% references
+\ifthenelse{\boolean{myAddReferences}}{
+	\input{document/other/references}
+}{}
+
+\end{document}

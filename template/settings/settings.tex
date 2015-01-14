@@ -1,0 +1,101 @@
+%%%%%%%%%%%%%%%%%%%%%
+% 
+% Author: Wachter Johannes
+% Date: 17.01.2014
+% File: template/settings.tex
+%
+% Document Settings
+
+\newcommand{\mypapersize}{A4}
+% e.g., "A4", "letter", "legal", "executive", ...
+% The size of the paper of the resulting PDF file.
+
+\newcommand{\mytype}{true}
+% e.g. true=print, false=screen
+% optimize output for this type
+
+\newcommand{\mylaterality}{twoside}
+% "oneside" or "twoside"
+% Either you are creating a document which is printed on both, left pages
+% and right pages (twoside) or you create a document which is printed
+% on right pages only (oneside).
+
+\newcommand{\mydraft}{false}
+% "true" or "false"
+% Use draft mode? If true, included graphics are replaced by empty
+% rectangles (of same size) and overfull boxes (in margin space) are
+% marked with black box (-> easy to spot!)
+
+\newcommand{\myparskip}{half}
+% e.g., "no", "full", "half", ...
+% How to separate paragraphs: indention ("no") or spacing ("half",
+% "full", ...).
+
+\newcommand{\myBCOR}{0mm}
+% Inner binding correction. This value depends on the method which is
+% being used to bind your printed result. Some techniques do not
+% require a binding correction at all ("0mm"), other require for
+% example "5mm". Refer to KOMA script documentation for a detailed
+% explanation what a binding correction is and how to measure it.
+
+\newcommand{\myfontsize}{12pt} 
+% e.g., 10pt, 11pt, 12pt
+% The font size of the main text in pt (points).
+
+\newcommand{\mylinespread}{1.25} 
+% e.g., 1.0, 1.5, 2.0
+% Line spacing in %/100. For example 1.5 means 150% of the usual line
+% spacing. Please use with caution: 100% ("1.0") is fine because the
+% font was designed for it.
+
+\newcommand{\mylanguage}{ngerman}
+% "english,ngerman", "ngerman,english", ...
+% NOTE: The *last* language is the active one!
+% See babel documentation for further details.
+
+\newcommand{\mytodonotesoptions}{}
+% e.g., "" (empty), "disable", ...
+% Options for the todonotes-package. If "disable", all todonotes will
+% be hidden (including listoftodos).
+
+\newcommand{\mytitlepage}{title/titlepage}
+% e.g. title/titlepage
+% define your titlepage
+
+\newcommand{\myleft}{2.5cm}
+\newcommand{\myright}{2.5cm}
+\newcommand{\mytop}{2.5cm}
+\newcommand{\mybottom}{2.5cm}
+% e.g. 1cm
+% define page borders, for twosided left != right, will be alternated every page
+
+\newcommand{\myaddtitle}{true}
+\newcommand{\myaddabstract}{true}
+\newcommand{\myaddtoc}{true}
+\newcommand{\myaddtol}{true} % table of listings
+\newcommand{\myaddtof}{true} % table of figures
+\newcommand{\myaddlistoftodos}{true}
+\newcommand{\myaddsummary}{true}
+\newcommand{\myaddreferences}{true}
+% e.g. true / false
+% should it be displayed
+
+% listings
+\newcommand{\mylstframe}{true}
+% e.g. true/false
+% frame around listings
+\newcommand{\mylstframeleftmargin}{1.5em}
+\newcommand{\mylstleftmargin}{2.0em}
+% e.g. 1.5em
+% margin for frame and code
+\newcommand{\mylstlanguage}{perl}
+% e.g. perl/c++/php ...
+% set default language
+
+\newcommand{\chapternumber}{0}
+% starting number of chapter
+
+\newcommand{\codelabelprefix}{code}
+\newcommand{\imglabelprefix}{img}
+\newcommand{\algolabelprefix}{algo}
+% label prefixes
