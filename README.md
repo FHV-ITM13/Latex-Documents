@@ -9,6 +9,21 @@ Feel free to use it for your thesis too. You can also provide any pull requests 
 
 Feedback is welcome.
 
+## Template usage
+
+To change the visibility of blocking notice page, abstract, toc, tol, tof, todos, summary, reference pages, attachment page and statutory declaration or to change the page borders see file at (about) line 70:
+
+```
+template\settings\settings.tex
+```
+
+To change the content of variables like your name, the title of your thesis, your supervisors' name .... please see the following file. It is highly recommended that you adapt this file and change the values of the attributes to your needs.
+
+```
+document\settings\attributes.tex
+```
+
+
 ## Usage
 
 Create or Clone own empty repository:

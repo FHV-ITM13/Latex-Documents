@@ -85,12 +85,6 @@
 % document
 \begin{document}
 
-% setcounter for chapter
-\setcounter{chapter}{\chapternumber}
-
-% roman page numbers and such; only available in scrbook
-\frontmatter
-
 % include blocking notice
 \ifthenelse{\boolean{myAddBlockingNoticeBoolean}}{
 	\input{document/other/blockingnotice}
@@ -101,6 +95,9 @@
 	\input{\mytitlepage}
 }{}
 
+% roman page numbers and such; only available in scrbook
+\frontmatter
+
 % abstract
 \ifthenelse{\boolean{myAddAbstractBoolean}}{
 	\input{document/other/abstract}
@@ -108,26 +105,29 @@
 
 % table of contents
 \ifthenelse{\boolean{myAddTocBoolean}}{
-	\tableofcontents\newpage 
+	\tableofcontents
 }{}
 
 % table of listings
 \ifthenelse{\boolean{myAddTolBoolean}}{
-	\lstlistoflistings\newpage 
+	\lstlistoflistings
 }{}
 
 % table of figures
 \ifthenelse{\boolean{myAddTofBoolean}}{
-	\listoffigures\newpage 
+	\listoffigures
 }{}
 
 % add todolist 
 \ifthenelse{\boolean{myAddListOfTodosBoolean}}{
-	\newpage\listoftodos
+	\listoftodos
 }{}
 
 % marks main part using arabic page numbers and such; only available in scrbook
 \mainmatter
+
+% setcounter for chapter
+\setcounter{chapter}{\chapternumber}
 
 \input{document/content/content}
 
