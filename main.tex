@@ -48,6 +48,9 @@
 %%%%%%%%%%%%%%
 % booleans
 % title page
+\newboolean{myAddBlockingNoticeBoolean}
+\setboolean{myAddBlockingNoticeBoolean}{\myaddblockingnotice} 
+% title page
 \newboolean{myAddTitleBoolean}
 \setboolean{myAddTitleBoolean}{\myaddtitle} 
 % abstract
@@ -69,14 +72,14 @@
 \newboolean{myAddSummaryBoolean}
 \setboolean{myAddSummaryBoolean}{\myaddsummary} 
 % references list
-\newboolean{myAddReferences}
-\setboolean{myAddReferences}{\myaddreferences}
+\newboolean{myAddReferencesBoolean}
+\setboolean{myAddReferencesBoolean}{\myaddreferences}
 % attatchment
-\newboolean{myAddAttachment}
-\setboolean{myAddAttachment}{\myaddattachment}
+\newboolean{myAddAttachmentBoolean}
+\setboolean{myAddAttachmentBoolean}{\myaddattachment}
 % references list
-\newboolean{myAddStatutoryDeclaration}
-\setboolean{myAddStatutoryDeclaration}{\myaddstatutorydeclaration}
+\newboolean{myAddStatutoryDeclarationBoolean}
+\setboolean{myAddStatutoryDeclarationBoolean}{\myaddstatutorydeclaration}
 
 %%%%%%%%%%%%%%
 % document
@@ -87,6 +90,11 @@
 
 % roman page numbers and such; only available in scrbook
 \frontmatter
+
+% include blocking notice
+\ifthenelse{\boolean{myAddBlockingNoticeBoolean}}{
+	\input{document/other/blockingnotice}
+}{}
 
 % include title page
 \ifthenelse{\boolean{myAddTitleBoolean}}{
@@ -129,17 +137,17 @@
 }{}
 
 % references
-\ifthenelse{\boolean{myAddReferences}}{
+\ifthenelse{\boolean{myAddReferencesBoolean}}{
 	\input{document/other/references}
 }{}
 
 % attachment
-\ifthenelse{\boolean{myAddAttachment}}{
+\ifthenelse{\boolean{myAddAttachmentBoolean}}{
 	\input{document/other/attachment}
 }{}
 
 % statutory declaration
-\ifthenelse{\boolean{myAddStatutoryDeclaration}}{
+\ifthenelse{\boolean{myAddStatutoryDeclarationBoolean}}{
 	\input{document/other/statutorydeclaration}
 }{}
 \end{document}
