@@ -1,14 +1,5 @@
-Latex template for FHV master thesis
+Latex-Documents
 ===============
-
-## Template information
-
-This latex template was especially created for writing a master thesis at University of Applied Sciences Vorarlberg (FHV).
-When this template was created we tried to adapt the look and feel to the existing Microsoft Word file template.
-
-Feel free to use it for your thesis too. You can also provide any pull requests if you like.
-
-Feedback is welcome.
 
 ## Usage
 

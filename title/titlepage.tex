@@ -1,47 +1,47 @@
 \begin{titlepage}
 
+% basic font size of the titlepage
+\large
+
+\AddToShipoutPicture*{
+	\AtPageUpperLeft{
+		\hspace{\paperwidth}
+		\raisebox{-25mm}{
+			\makebox[-15mm][r]{
+				\includegraphics[width=42mm]{title/FHV_Logo}
+			}
+		}
+	}
+}
+
 \begin{center}
+~
+\vfill\vfill\vfill
 
-\vspace*{30mm}
-
-{\LARGE\bfseries\mytitle}
-
-\vspace{5mm}
-
-{\bfseries\myworktitle}
-
-\end{center}
+\myauthor
 
 \vfill
 
-\begin{flushright}
+{\LARGE\bfseries\mytitle}
 
-\vspace*{15mm}
+\vfill\vfill\vfill
 
-Masterarbeit\\
-zur Erlangung des akademischen Grades\\
-\vspace*{2mm}
-Master of Science in Engineering (MSc)
+{\bfseries\myworktitle}
 
-\vspace{20mm}
+\vfill\vfill\vfill
+\vfill\vfill\vfill
+\vfill\vfill\vfill
 
-\myuniversity\\
-\mydepartment
+\myuniversity
 
-\vspace*{10mm}
+\vfill
 
-Betreut von\\
-\mysupervisor
-
-\vspace*{10mm}
-
-Vorgelegt von\\
-\myauthor
+\mydepartment\\
+\mysupervisor\\
 
 \vfill
 
 \mysubmissiontown, \mysubmissionyear
 
-\end{flushright}
-
+\end{center}
 \end{titlepage}
