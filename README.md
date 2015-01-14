@@ -1,5 +1,9 @@
-Latex-Documents
+Latex-Documents: Template for FHV master thesis
 ===============
+
+## Template information
+
+This latex template was created especially for writing a master thesis at  University of Applied Sciences Vorarlberg (FHV).
 
 ## Usage
 
