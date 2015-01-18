@@ -36,6 +36,8 @@ Please keep in mind that you have to build the document with BibTex seperatly. T
 
 If you use any IDE take a look in the options menu - maybe you can find an option to automatize this.
 
+It is also possible to use Zotero for reference management and BibTex.
+
 ## Repo Usage
 
 Create or Clone own empty repository:
