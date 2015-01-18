@@ -18,4 +18,11 @@ git push origin master
 
 ## BibTeX
 
-Please keep in mind that you have to build the document with BibTex seperatly.
+Please keep in mind that you have to build the document with BibTex seperatly. To get proper bibliography you have to perform the following compiling steps:
+
+  1. LaTex
+  2. BibTex
+  3. LaTex
+  4. LaTex
+
+If you use any IDE take a look in the options menu - maybe you can find an option to automatize this.
