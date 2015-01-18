@@ -15,3 +15,7 @@ Push it to your own Repository:
 ```
 git push origin master
 ```
+
+## BibTeX
+
+Please keep in mind that you have to build the document with BibTex seperatly.
