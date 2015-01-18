@@ -34,7 +34,7 @@ Please keep in mind that you have to build the document with BibTex seperatly. T
   3. LaTex
   4. LaTex
 
-If you use any IDE take a look in the options menu - maybe you can find an option to automatize this.
+If you use any IDE take a look into the options menu - maybe you can find any option to automatize this.
 
 It is also possible to use Zotero for reference management and BibTex.
 
