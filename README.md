@@ -11,6 +11,8 @@ Feedback is welcome.
 
 ## Template usage
 
+### Settings
+
 To change the visibility of blocking notice page, abstract, toc, tol, tof, todos, summary, reference pages, attachment page and statutory declaration or to change the page borders see file at (about) line 70:
 
 ```
@@ -23,8 +25,18 @@ To change the content of variables like your name, the title of your thesis, you
 document\settings\attributes.tex
 ```
 
+### BibTeX
 
-## Usage
+Please keep in mind that you have to build the document with BibTex seperatly. To get proper bibliography you have to perform the following compiling steps:
+
+  1. LaTex
+  2. BibTex
+  3. LaTex
+  4. LaTex
+
+If you use any IDE take a look in the options menu - maybe you can find an option to automatize this.
+
+## Repo Usage
 
 Create or Clone own empty repository:
 
