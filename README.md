@@ -44,11 +44,11 @@ Create or Clone own empty repository:
 
 ```
 git remote add template -t fhvthesistemplate -f origin git@github.com:FHV-ITM13/Latex-Documents.git
-git pull template master
+git pull template fhvthesistemplate 
 ```
 
 Push it to your own Repository:
 
 ```
-git push origin master
+git push origin fhvthesistemplate
 ```
