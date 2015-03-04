@@ -43,7 +43,7 @@ It is also possible to use Zotero for reference management and BibTex.
 Create or Clone own empty repository:
 
 ```
-git remote add template -t fhvthesistemplate -f origin git@github.com:FHV-ITM13/Latex-Documents.git
+git remote add template git@github.com:FHV-ITM13/Latex-Documents.git
 git pull template fhvthesistemplate 
 ```
 
