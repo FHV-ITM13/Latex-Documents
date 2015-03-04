@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%
 % 
-% Author: Wachter Johannes
+% Author: Wachter Johannes, Stefan Laesser
 % Date: 17.01.2014
 % File: main.tex
 %
@@ -65,6 +65,9 @@
 % table of figures
 \newboolean{myAddTofBoolean}
 \setboolean{myAddTofBoolean}{\myaddtof} 
+% table of tables
+\newboolean{myAddTotBoolean}
+\setboolean{myAddTotBoolean}{\myaddtot} 
 % todo list
 \newboolean{myAddListOfTodosBoolean}
 \setboolean{myAddListOfTodosBoolean}{\myaddlistoftodos} 
@@ -95,6 +98,11 @@
 	\input{\mytitlepage}
 }{}
 
+% statutory declaration
+\ifthenelse{\boolean{myAddStatutoryDeclarationBoolean}}{
+	\input{document/other/statutorydeclaration}
+}{}
+
 % roman page numbers and such; only available in scrbook
 \frontmatter
 
@@ -106,16 +114,6 @@
 % table of contents
 \ifthenelse{\boolean{myAddTocBoolean}}{
 	\tableofcontents
-}{}
-
-% table of listings
-\ifthenelse{\boolean{myAddTolBoolean}}{
-	\lstlistoflistings
-}{}
-
-% table of figures
-\ifthenelse{\boolean{myAddTofBoolean}}{
-	\listoffigures
 }{}
 
 % add todolist 
@@ -141,13 +139,28 @@
 	\input{document/other/references}
 }{}
 
+% table of listings
+\ifthenelse{\boolean{myAddTolBoolean}}{
+		\lstlistoflistings
+		\addcontentsline{toc}{chapter}{Quellcodeverzeichnis}
+}{}
+
+% table of tables
+\ifthenelse{\boolean{myAddTotBoolean}}{
+	\listoftables
+	\addcontentsline{toc}{chapter}{Tabellenverzeichnis}
+}{}
+
+% table of figures
+\ifthenelse{\boolean{myAddTofBoolean}}{
+	\listoffigures
+  \addcontentsline{toc}{chapter}{Abbilungsverzeichnis}
+}{}
+
 % attachment
 \ifthenelse{\boolean{myAddAttachmentBoolean}}{
 	\input{document/other/attachment}
 }{}
 
-% statutory declaration
-\ifthenelse{\boolean{myAddStatutoryDeclarationBoolean}}{
-	\input{document/other/statutorydeclaration}
-}{}
+
 \end{document}
