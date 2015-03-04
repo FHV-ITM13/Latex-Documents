@@ -4,6 +4,8 @@ TSWLatexianTemp_*.tex
 TSWLatexianTemp_*.pdf
 /.texpadtmp/
 
+*.db
+
 *.acn
 *.acr
 *.alg
