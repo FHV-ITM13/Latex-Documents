@@ -47,10 +47,4 @@ git remote add template git@github.com:FHV-ITM13/Latex-Documents.git
 git pull template fhvthesistemplate 
 ```
 
-Push it to your own Repository:
-
-```
-git push origin master
-```
-
 See: [2.5 Git Basics - Working with Remotes](http://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes)
