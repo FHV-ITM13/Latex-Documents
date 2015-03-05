@@ -39,17 +39,17 @@ Should this not work try this:
 \usepackage[utf8]{inputenc}
 ```
 
-### Add new content
+### Add new content (chapter,..)
 
-All files including your text are located in the directory 'document\content'. Just edit the file 'document\content\content.tex' when you want to add a new file with content by adding the following line:
+All files including your text are located in the directory 'document\content'. Just edit the file 'document\content\content.tex' when you want to add a new file (e.g. containing a whole chapter) by adding the following line:
 
 ```
 \include{document/content/FILENAME}
 ```
 
-### Statutory declaration and blocking notice
+### Statutory declaration, blocking notice and attachment
 
-If you need to change the text of the statuatory declaration or the blocking notice you find the files in the directory 'document\other'.
+If you need to change the text of the statuatory declaration, the blocking notice or the attachment you find the files in the directory 'document\other'.
 
 ### BibTeX
 
