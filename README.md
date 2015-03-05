@@ -25,6 +25,32 @@ To change the content of variables like your name, the title of your thesis, you
 document\settings\attributes.tex
 ```
 
+You may run into truble when you use this template together with umlauts since every operating system uses its own encoding standard. You may have to adapt the file 'template\packages.tex' at line 13 like this:
+
+```
+Windows
+\usepackage[ansinew]{inputenc}
+Linux
+\usepackage[latin1]{inputenc}
+Mac
+\usepackage[applemac]{inputenc}
+
+Should this not work try this:
+\usepackage[utf8]{inputenc}
+```
+
+### Add new content (chapter,..)
+
+All files including your text are located in the directory 'document\content'. Just edit the file 'document\content\content.tex' when you want to add a new file (e.g. containing a whole chapter) by adding the following line:
+
+```
+\include{document/content/FILENAME}
+```
+
+### Statutory declaration, blocking notice and attachment
+
+If you need to change the text of the statuatory declaration, the blocking notice or the attachment you find the files in the directory 'document\other'.
+
 ### BibTeX
 
 Please keep in mind that you have to build the document with BibTex seperatly. To get proper bibliography you have to perform the following compiling steps:
@@ -37,6 +63,8 @@ Please keep in mind that you have to build the document with BibTex seperatly. T
 If you use any IDE take a look into the options menu - maybe you can find any option to automatize this.
 
 It is also possible to use Zotero for reference management and BibTex.
+
+The file containing the references is located at ''document\other'.
 
 ## Repo Usage
 
