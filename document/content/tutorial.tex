@@ -1,0 +1,125 @@
+\chapter{Tutorial}
+
+\section{Images}
+
+In der Abbildung \imgref{gull} können Sie eine Möwe sehen.
+
+\img{0.5}{document/graphics/gull.jpg}{Quelle: http://de.wikipedia.org/wiki/Möwen}{gull}
+
+In der Abbildung \imgref{biene} können Sie eine Biene sehen:
+
+\imgsrc{0.3}{document/graphics/biene.png}{Ich bin eine Bieene.}{biene}{frag google!}
+
+\begin{code}[tex]{Inline code}{Inline code}
+You can see a Gull in Abbildung \imgref{gull1}.
+
+\img{0.5}{document/graphics/gull.jpg}{Quelle: http://de.wikipedia.org/wiki/Moewen}{gull1}
+
+And a bee in Abbildung \imgref{biene1}:
+
+\imgsrc{0.3}{document/graphics/biene.png}{Ich bin eine Bieene.}{biene1}{frag google!}
+\end{code}
+
+\section{Listings}
+
+In Listing \coderef{example} können Sie ein Beispiel Code sehen.
+
+\codefile[6][12][perl]{document/scripts/example.pl}{example caption}{example}
+
+\begin{code}[tex]{Include a code file}{codefile}
+In Listing \coderef{examplelabel} you can see a perl code sample (line 6 to 12).
+\codefile[6][12][perl]{document/scripts/example.pl}{example caption}{example}
+\end{code}
+
+\begin{code}[c]{caption}{label}
+#include <msp430.h> 
+
+void main(void) {
+	WDTCTL = WDTPW + WDTHOLD; // Stop watchdog timer
+
+	P1DIR |= BIT0; // Set P1.0 to output direction
+	P1OUT &= ~BIT0; // Set the red LED on
+
+	TA0CCR0 = 12000; // Count limit (16 bit)
+	TA0CCTL0 = 0x10;	 // Enable counter interrupts, bit 4=1
+	TA0CTL = TASSEL_1 + MC_1; // Timer A 0 with ACLK @ 12KHz, count UP
+
+	_BIS_SR(LPM0_bits + GIE); // LPM0 (low power mode) with interrupts enabled
+}
+
+#pragma vector=TIMER0_A0_VECTOR
+   __interrupt void Timer0_A0 (void) { // Timer0 A0 interrupt service routine
+	P1OUT ^= BIT0; // Toggle red LED
+}
+\end{code}
+
+
+\begin{code}[tex]{Inline code}{Inline code}
+In Listing \coderef{inline} you can see a c code sample.
+
+\begin{code}[c]{example caption}{inline}
+#include <msp430.h> 
+
+void main(void) {
+...
+}
+\ end{code}
+\end{code}
+
+\section{Bibtex}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. \cite{bibtex.a}
+
+Der Literaturgenerator macht es möglich, schnell und einfach BibTeX-Einträge zu erstellen.
+Es reicht den Titel des Buches in das Suchfeld einzutragen.\\
+\url{http://www.literatur-generator.de/}
+
+Die meisten Bibliothekskataloge können mittlerweile BibTeX exportieren (ggf. nach \url{http://de.wikipedia.org/wiki/Citavi}). Hiermit können komplette Datensätze in die BibTeX-Datenbank übernommen werden.\\
+Mit dem Webtool Lead2Amazon ist es möglich, BibTeX-Einträge für Bücher, die bei Amazon erhältlich sind, automatisch zu generieren.\\
+In das Suchfeld muss dabei lediglich die ISBN eingetragen werden.\\
+\url{http://lead.to/amazon/en/?op=bt}
+
+Mit dem Literaturverwaltungsprogramm zotero lassen sich auch bibtex-Dateien exportieren.\\
+\url{http://www.zotero.org}
+
+\section{Algorithm}
+
+This Algoorithm \algoref{algo1} is great to learn.
+
+\begin{algo}{How to write algorithms}{algo1}
+ \KwData{this text}
+ \KwResult{how to write algorithm with \LaTeX2e }
+ initialization\;
+ \While{not at end of this document}{
+  read current\;
+  \eIf{understand}{
+   go to next section\;
+   current section becomes this one\;
+   }{
+   go back to the beginning of current section\;
+  }
+ }
+\end{algo}
+
+\begin{code}[Tex]{Algorithm code}{algorithm}
+This Algoorithm \algoref{algo1} is great to learn.
+
+\begin{algo}{How to write algorithms}{algo1}
+ \KwData{this text}
+ \KwResult{how to write algorithm with \LaTeX2e }
+ initialization\;
+ \While{not at end of this document}{
+  read current\;
+  \eIf{understand}{
+   go to next section\;
+   current section becomes this one\;
+   }{
+   go back to the beginning of current section\;
+  }
+ }
+\end{algo}
+\end{code}
+
+\Blinddocument
+
+\Blinddocument
