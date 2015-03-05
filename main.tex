@@ -71,9 +71,6 @@
 % todo list
 \newboolean{myAddListOfTodosBoolean}
 \setboolean{myAddListOfTodosBoolean}{\myaddlistoftodos} 
-% summary
-\newboolean{myAddSummaryBoolean}
-\setboolean{myAddSummaryBoolean}{\myaddsummary} 
 % references list
 \newboolean{myAddReferencesBoolean}
 \setboolean{myAddReferencesBoolean}{\myaddreferences}
@@ -90,17 +87,17 @@
 
 % include blocking notice
 \ifthenelse{\boolean{myAddBlockingNoticeBoolean}}{
-	\input{document/other/blockingnotice}
+	\include{document/other/blockingnotice}
 }{}
 
 % include title page
 \ifthenelse{\boolean{myAddTitleBoolean}}{
-	\input{\mytitlepage}
+	\include{\mytitlepage}
 }{}
 
 % statutory declaration
 \ifthenelse{\boolean{myAddStatutoryDeclarationBoolean}}{
-	\input{document/other/statutorydeclaration}
+	\include{document/other/statutorydeclaration}
 }{}
 
 % roman page numbers and such; only available in scrbook
@@ -108,7 +105,7 @@
 
 % abstract
 \ifthenelse{\boolean{myAddAbstractBoolean}}{
-	\input{document/other/abstract}
+	\include{document/content/abstract}
 }{}
 
 % table of contents
@@ -127,18 +124,11 @@
 % setcounter for chapter
 \setcounter{chapter}{\chapternumber}
 
-\include{document/content/introduction}
-\include{document/content/stateoftheart}
 \input{document/content/content}
-
-% summary
-\ifthenelse{\boolean{myAddSummaryBoolean}}{
-	\input{document/other/summary}
-}{}
 
 % references
 \ifthenelse{\boolean{myAddReferencesBoolean}}{
-	\input{document/other/references}
+	\include{document/other/references}
 }{}
 
 % table of listings
@@ -161,7 +151,7 @@
 
 % attachment
 \ifthenelse{\boolean{myAddAttachmentBoolean}}{
-	\input{document/other/attachment}
+	\include{document/other/attachment}
 }{}
 
 
