@@ -80,7 +80,9 @@
 % references list
 \newboolean{myAddStatutoryDeclarationBoolean}
 \setboolean{myAddStatutoryDeclarationBoolean}{\myaddstatutorydeclaration}
-
+% list of abbreviations
+\newboolean{myaddlistofabbreviationsBoolean}
+\setboolean{myaddlistofabbreviationsBoolean}{\myaddlistofabbreviations}
 %%%%%%%%%%%%%%
 % document
 \begin{document}
@@ -129,6 +131,11 @@
 % references
 \ifthenelse{\boolean{myAddReferencesBoolean}}{
 	\include{document/other/references}
+}{}
+
+% abbreviations
+\ifthenelse{\boolean{myaddlistofabbreviationsBoolean}}{
+	\include{document/other/abbreviations}
 }{}
 
 % table of listings
