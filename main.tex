@@ -112,6 +112,8 @@
 
 % table of contents
 \ifthenelse{\boolean{myAddTocBoolean}}{
+	\cleardoublepage
+	\pdfbookmark{\contentsname}{toc}
 	\tableofcontents
 }{}
 
